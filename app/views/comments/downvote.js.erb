@@ -1,0 +1,2 @@
+var selector = "#comment_score_<%= @comment.id %>"
+$(selector).html("<%= j (render partial: 'comments/scores', locals: { comment: @comment} ) %>")

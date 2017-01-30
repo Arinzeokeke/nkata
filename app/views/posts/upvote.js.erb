@@ -1,0 +1,2 @@
+var selector = "#post_scores_<%=@post.id%>"
+$(selector).html("<%= j (render partial: 'posts/scores', locals: { post: @post} ) %>")

@@ -1,0 +1,9 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @channel.name %>
+</p>
+
+<%= render 'layouts/post_index', posts:@channel.posts %>
+<%= link_to 'Back', channels_path %>

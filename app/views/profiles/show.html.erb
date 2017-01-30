@@ -1,0 +1,15 @@
+<p> User: <%= @user.username %> </p>
+<% if @posts.size %>
+<p> Posts: </p>
+<%= render 'layouts/post_index', posts:@posts %>
+<% end %>
+
+<div id = "comments-accordion" class="comment-list">
+    <ul id ="comments-all">
+<% if @comments.count > 0 %>
+    <%= render @comments %>
+    
+
+<% end %>
+</ul>
+    </div>

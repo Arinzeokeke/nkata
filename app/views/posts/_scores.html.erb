@@ -1,0 +1,12 @@
+<div class="row  post-scores" id=<%=  "post_scores_#{post.id}"  %>>
+            <div class="col-md-1 text-right">
+              <p class="text-right">
+                <%= link_to "#{post.get_upvotes.size}", upvote_post_path(post.id), remote:true, 
+                class: "fa fa-angle-up", id: "#{post.id}_upvote", title: 'Upvote post', rel: 'tooltip'  %></p>
+            </div>
+            <div class="col-md-1 text-right">
+              <p class="text-right">
+                <%= link_to "#{post.get_downvotes.size}", downvote_post_path(post.id), remote:true, 
+                class: "fa fa-angle-down", id: "#{post.id}_downvote", title: 'Upvote post', rel: 'tooltip'  %></p>
+            </div>
+</div>
