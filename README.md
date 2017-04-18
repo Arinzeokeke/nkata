@@ -1,24 +1,26 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+A reddit.com clone built on Rails. 
 
-Things you may want to cover:
+Features:
 
-* Ruby version
+* Make Posts
 
-* System dependencies
+* Create Channels
 
-* Configuration
+* Upvote/Downvote Posts, Comments
 
-* Database creation
+* Reply to Comments
 
-* Database initialization
+Todos: 
 
-* How to run the test suite
+* More styling cleanup
 
-* Services (job queues, cache servers, search engines, etc.)
+* Notifications
 
-* Deployment instructions
+* Admin Authorisation Privileges
+* Private Messages
 
-* ...
+* NSFW Marking
+
+* Other things
