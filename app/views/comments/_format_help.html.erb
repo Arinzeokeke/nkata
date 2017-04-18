@@ -1,0 +1,148 @@
+<a style="float:right" data-toggle="collapse" data-target= <%="#formatting_#{stuff.class.name + stuff.id.to_s}" %> >formatting help</a>
+<div id= <%="formatting_#{stuff.class.name + stuff.id.to_s}"%> class="formatting collapse">
+    <table border="1" cellpadding="10" style="border:1px solid #cccccc">
+    <tbody><tr style="background-color: #bbbbbb">
+    <td width="50%">you type</td>
+    <td width="50%">you see</td>
+    </tr>
+    <tr>
+    <td>[headcycle!](https://www.headcycle.com)</td>
+    <td><a href="http://www.headcycle.com">headcycle!</a></td>
+    </tr>
+
+    <tr>
+    <td>*italics*</td>
+    <td><i>italics</i></td>
+    </tr>
+
+    <tr>
+    <td>**bold**</td>
+    <td><b>bold</b></td>
+    </tr>
+
+    <tr>
+    <td>* item 1<br>* item 2<br>* item 3</td>
+    <td>
+        <ul>
+            <li>item 1</li>
+            <li>item 1</li>
+            <li>item 1</li>
+        </ul>
+    </td>
+    </tr>
+
+    <tr>
+    <td>
+    &gt; Email-style angle brackets<br>
+    &gt; are used for blockquotes.<br>
+    <br>
+    &gt; &gt; And, they can be nested.<br>
+    <br>
+    &gt; #### Headers in blockquotes<br>
+    &gt;<br> 
+    &gt; * You can quote a list.<br>
+    &gt; * Etc.<br>
+    </td>
+    <td>
+    <blockquote>
+    Email-style angle brackets<br>
+    are used for blockquotes.<br>
+    <br>
+    <blockquote>
+    And, they can be nested.
+    </blockquote>
+    <br>
+    <h4>Headers in blockquotes</h4>
+
+    <ul>
+    <li>You can quote a list.</li>
+    <li>Etc.</li>
+    </ul>
+    </blockquote>
+    </td>
+    </tr>
+    <tr>
+    <td>```function test(){<br>
+    alert('hi');<br>
+    }```
+    </td>
+    <td>
+    <code>
+    function test(){<br>
+    alert('hi');<br>
+    }<br>
+    </code>
+    </td>
+    </tr>
+    <tr>
+    <td>~~strikethrough~~
+    </td>
+    <td>
+    <strike>strikethrough</strike>
+    </td>
+    </tr>
+    <tr>
+    <td>
+super^script    
+    </td>
+    <td>
+super<sup>script</sup>
+    </td>
+    </tr>
+
+    <tr>
+    <td>
+==this is highlighted==
+    </td>
+    <td>
+<mark>this is highlighted</mark>
+    </td>
+    </tr>
+
+
+    <tr style="background-color: #bbbbbb">
+    <td>
+    using spoiler tags
+    </td>
+    <td>
+    mouse over or touch the hidden text
+    </td>
+    </tr>
+    <tr>
+    <td valign="top">
+    When they ==:fell in love== I wasn't surprised.
+    <hr>
+    When they ==:fell<br>
+    in<br>
+    love==<br>
+    I wasn't surprised.
+    <hr>
+    <u>Please Note</u><br>
+    Spoilers can be used in a sentence or span multiple lines, with some caveats:
+    <ul>
+    <li>The end <mark>==</mark> tag <b><u>must not</u></b> have spaces separating it from the end of the spoiler text</li>
+    <li>Multiline spoilers <b><u>cannot have</u></b> more than one return between lines</li>
+    </ul>
+    <hr>
+    ==:This is a spoiler<span style="background-color:red">&nbsp;</span>==
+    <br><br>
+    ==:This<br><span style="background-color:red">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><br>
+    is<br><span style="background-color:red">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><br>
+    a<br><span style="background-color:red">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><br>
+    spoiler==
+    </td>
+    <td valign="top">
+    When they <span class="spoiler" style="font-size:16px">fell in love</span> I wasn't surprised.
+    <hr>
+    When they <span class="spoiler" style="font-size:16px">fell<br>
+    in<br>
+    love</span><br>
+    I wasn't surprised.
+    <hr>
+    <br><br><br><br><br><br><br>
+    <hr>
+    <div style="color:red"><span class="glyphicon glyphicon-ban-circle"></span> will not work</div>
+    </td>
+    </tr>
+    </tbody></table>
+</div>

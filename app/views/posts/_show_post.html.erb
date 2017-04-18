@@ -1,0 +1,15 @@
+<div class="starter-template" style="text-align:left">
+	<h1 class="header"><a href="/h/musicmakers">musicmakers</a></h1>
+	<div style="height:10px"></div>
+	<%= render 'layouts/post_new', post: post%>
+	<%= render 'comments/comment_box', post: post %>
+	<div id="comments_all">
+		<div id = "comments-accordion" class="comment-list">
+			<ul id ="comments-all">
+				<% if post.comments.count > 0 %>
+    				<%= render post.comments %>
+    			<% end %>
+			</ul>
+		</div>
+	</div>
+</div>

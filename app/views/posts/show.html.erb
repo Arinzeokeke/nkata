@@ -1,51 +1,6 @@
-<p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Title:</strong>
-  <%= @post.title %>
-</p>
+<% render 'posts/scores', post:@post %>
 
-<p>
-  <strong>Url:</strong>
-  <%= @post.url %>
-</p>
-
-<p>
-  <strong>Text:</strong>
-  <%= @post.text %>
-</p>
-
-<p>
-  <strong>Channel:</strong>
-  <%= @post.channel.name %>
-
-</p>
+<%= render 'show_post', post: @post %>
 
 
-<p>
-  <strong>User:</strong>
-  <%= @post.user.username %>
-
-</p>
-<%= render 'posts/scores', post:@post %>
-
-<div class="comment-section">
-<h2> Comments </h2>
-<div class = "comment-box">
-<%= render "comments/comment_box"%>
-</div>
-
-<div id = "comments-accordion" class="comment-list">
-    <ul id ="comments-all">
-<% if @post.comments.count > 0 %>
-    <%= render @post.comments %>
-    
-
-<% end %>
-</ul>
-    </div>
-</div>
-
-
-<%= link_to 'Edit', edit_post_path(@post) %> |
-<%= link_to 'Back', posts_path %>

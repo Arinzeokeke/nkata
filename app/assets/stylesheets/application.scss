@@ -14,9 +14,9 @@
  *= require_tree .
  *= require_self
  */
-@import "bootstrap-sprockets";
-@import "bootstrap";
-@import "font-awesome";
+ @import "bootstrap-sprockets";
+ @import "bootstrap";
+ @import "font-awesome";
 
 .site{
 	padding-top: 10px;
@@ -27,5 +27,22 @@
 }
 .post-scores{
 	color: red;
-	text-decoration: none;
+	text-decoration: none!important;
+}
+
+.downvote, .upvote {
+    
+    text-shadow: 1px 1px 1px #ccc;
+    font-size: 2.1em;
+}
+
+.downvoted{
+	color: blue;
+}
+.upvoted{
+	color: red;
+}
+.post-thumbnail{
+    width: 70px;
+    height: 70px;
 }

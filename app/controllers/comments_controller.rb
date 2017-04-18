@@ -1,7 +1,7 @@
 class CommentsController < ApplicationController
 	#before_action :get_post
   before_action :authenticate_user!
-	before_action :get_comment, only: [:destroy, :upvote, :downvote]
+	before_action :get_comment, only: [:destroy, :upvote, :downvote, :update, :edit]
 	before_action :find_commentable
     #before_action :authenticate_admin!, only: [:destroy]
 	def create
@@ -20,6 +20,21 @@ class CommentsController < ApplicationController
     else
       redirect_to :back, notice: "Your comment wasn't posted!"
     end
+  end
+
+  def edit
+  end
+
+
+
+  def update
+      if current_user == @comment.user and @comment.update(comment_edit_params)
+        format.html { redirect_to @comment.post, notice: 'Comment was successfully updated.' }
+        format.json { render :show, status: :ok, location: @comment }
+      else
+        format.html { render :edit }
+        format.json { render json: @comment.errors, status: :unprocessable_entity }
+      end    
   end
 
   def upvote

@@ -1,12 +1,32 @@
-<div id = <%= "comment_score_#{comment.id}"%>>
-<div class="col-md-1 text-right" >
-              <p class="text-right">
-                <%= link_to "#{comment.get_upvotes.size}", upvote_comment_path(comment.id), remote:true, 
-                class: "fa fa-thumbs-up", id: "#{comment.id}_upvote", title: 'Upvote comment', rel: 'tooltip'  %></p>
-            </div>
-            <div class="col-md-1 text-right">
-              <p class="text-right">
-                <%= link_to "#{comment.get_downvotes.size}", downvote_comment_path(comment.id), remote:true, 
-                class: "fa fa-thumbs-down", id: "#{comment.id}_downvote", title: 'Downvote comment', rel: 'tooltip'  %></p>
-            </div>
-            </div>
+
+
+<div class="votes_container" >
+    <div style="text-align: center">
+        <img src="/assets/up.png" alt="up" class="voteup" style="cursor: pointer">
+    </div>
+    <div class="vote_container">0</div>
+    <div style="text-align: center">
+
+        <img src="/assets/down.png" alt="down" class="votedown" style="cursor: pointer">
+
+    </div>
+</div>
+
+<% upvote, downvote = '', ''%>
+<% if user_signed_in? %>
+<% upvote = " upvoted" if current_user.voted_up_on? comment %>
+<% downvote = " downvoted" if current_user.voted_down_on? comment %>
+
+<% end %>
+<div class="text-center post-upvote">
+    <%= link_to "", upvote_comment_path(comment.id), remote:true, 
+    class: "fa fa-arrow-up upvote" + upvote , id: "comment_#{comment.id}_upvote", title: 'Upvote Comment', rel: 'tooltip'  %></div>
+    <div class = "text-center post-average-score">
+        <h3 class=<%= upvote + downvote %>>
+            <%= comment.get_upvotes.size - comment.get_downvotes.size %>
+        </h3>
+    </div>
+    <div class="text-center post-downvote">
+        <%= link_to "", downvote_comment_path(comment.id), remote:true, 
+        class: "fa fa-arrow-down downvote" +downvote, id: "comment_#{comment.id}_downvote", title: 'Upvote post', rel: 'tooltip'  %>
+    </div>

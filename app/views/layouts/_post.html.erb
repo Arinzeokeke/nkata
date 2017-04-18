@@ -1,41 +1,43 @@
 
-  <div class="single-post">
+<div class="single-post">
+  <div class="row">
+        <div class= "col-md-1 post-score" id = <%= "post_scores_#{post.id}"%> >
+          <%= render "posts/scores", post:post %>
+        </div>
+        <div class="col-md-1 post-thumb">
+         <%= get_site_thumbnail post if post.url %>
+       </div>
+
+   <div class="col-md-11 post-desc">
+    <p class = "post-title"> <h2><%=post.title%> <span class = "post-url">(<%=post.url%>)</span></h2></p>
+    <p class="post-poster"><h4>
+      submitted by <%= link_to post.user.username, profile_path(post.user.id) %>
+      <%=" #{time_ago_in_words post.created_at} ago to " %>
+      <%= link_to post.channel.name, channel_path(post.channel.id) %></h4>
+    </p>
     <div class="row">
-      <div class="col-md-1 post-score">
-        
-      </div>
-      <div class="col-md-2 post-thumb">
-      </div>
-      <div class="col-md-10 post-desc">
-        <p class = "post-title"> <h2><%=post.title%> <span class = "post-url">(<%=post.url%>)</span></h2></p>
-        <p class="post-poster"><h4>
-          submitted by <%= link_to post.user.username, profile_path(post.user.id) %>
-          <%=" #{time_ago_in_words post.created_at} ago to " %>
-          <%= link_to post.channel.name, channel_path(post.channel.id) %></h4>
-        </p>
-        <div class="row">
-        <div class="col-md-2">
-          <p class="post-comments"><h5>
+      <div class="col-md-2">
+        <p class="post-comments"><h5>
           <%= link_to "#{post.comments.size} comments", post_path(post.id) %></h5>
         </p>
-        </div>
-        <% if user_signed_in? && (current_user.id == post.user.id) %>
-          
-       
-        <div class="col-md-1">
-           <p class="post-edit"><h5>
-            <%=  link_to 'Edit', edit_post_path(post)  %></h5>
-          </p>
-        </div>
-          <div class="col-md-1">
-           <p class="post-delete"><h5>
-            <%=  link_to 'Delete', post, method: :delete, data: { confirm: 'Are you sure?' }   %></h5>
-          </p>
-        </div>
-         <% end %>
-        </div>
-        
-
       </div>
+      <% if user_signed_in? && (current_user.id == post.user.id) %>
+
+
+      <div class="col-md-1">
+       <p class="post-edit"><h5>
+        <%=  link_to 'Edit', edit_post_path(post)  %></h5>
+      </p>
     </div>
+    <div class="col-md-1">
+     <p class="post-delete"><h5>
+      <%=  link_to 'Delete', post, method: :delete, data: { confirm: 'Are you sure?' }   %></h5>
+    </p>
   </div>
+  <% end %>
+</div>
+
+
+</div>
+</div>
+</div>

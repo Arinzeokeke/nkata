@@ -1,12 +1,28 @@
-<div class="row  post-scores" id=<%=  "post_scores_#{post.id}"  %>>
-            <div class="col-md-1 text-right">
-              <p class="text-right">
-                <%= link_to "#{post.get_upvotes.size}", upvote_post_path(post.id), remote:true, 
-                class: "fa fa-angle-up", id: "#{post.id}_upvote", title: 'Upvote post', rel: 'tooltip'  %></p>
-            </div>
-            <div class="col-md-1 text-right">
-              <p class="text-right">
-                <%= link_to "#{post.get_downvotes.size}", downvote_post_path(post.id), remote:true, 
-                class: "fa fa-angle-down", id: "#{post.id}_downvote", title: 'Upvote post', rel: 'tooltip'  %></p>
-            </div>
+                <% upvote, downvote = '', ''%>
+              <% if user_signed_in? %>
+               <% upvote = " upvoted" if current_user.voted_up_on? post %>
+               <% downvote = " downvoted" if current_user.voted_down_on? post %>
+
+              <% end %>
+              <div class="text-center post-upvote">
+                <%= link_to "", upvote_post_path(post.id), remote:true, 
+                class: "fa fa-arrow-up upvote" + upvote , id: "#{post.id}_upvote", title: 'Upvote post', rel: 'tooltip'  %></div>
+                <div class = "text-center post-average-score">
+                <h3 class=<%= upvote + downvote %>>
+                <%= post.get_upvotes.size - post.get_downvotes.size %>
+                </h3>
+                </div>
+              <div class="text-center post-downvote">
+                <%= link_to "", downvote_post_path(post.id), remote:true, 
+                class: "fa fa-arrow-down downvote" +downvote, id: "#{post.id}_downvote", title: 'Upvote post', rel: 'tooltip'  %>
+                </div>
+
+                  <div class="votes_container" style="padding-top: 7px">
+     <div class="center">
+        <a href="/login" data-remote="true" data-toggle="modal" data-target="#myModal"><img src="/assets/up.png" alt="up"></a>
+    </div>
+    <div class="vote_container">2</div>
+    <div class="center">
+        <a href="/login" data-remote="true" data-toggle="modal" data-target="#myModal"><img src="/assets/down.png" alt="down"></a>
+    </div>
 </div>

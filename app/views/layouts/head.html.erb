@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Nkata</title>
+    <%= csrf_meta_tags %>
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body>
+  		<%= render "layouts/head_nav" %>
+      <p class="notice"><%= notice %></p>
+       <p class="alert"><%= alert %></p>
+    
+
+      <div class='da-body'>
+        <%= render "layouts/sidebar" %>
+        
+        <%= yield %>
+        <%= render "layouts/footer" %>
+      </div>
+
+
+	    <script type="text/javascript">
+$('.nav a').on('click', function(){
+$(".navbar-collapse").css("height", "1px");
+$(".navbar-collapse").removeClass("in");
+$(".navbar-collapse").addClass("collapse");
+});
+$(function () {
+    $('[data-toggle="tooltip"]').tooltip();
+});
+</script>   
+  </body>
+</html>

@@ -44,6 +44,8 @@ gem 'acts-as-taggable-on'
 gem 'devise'
 gem 'react-rails'
 gem 'acts_as_votable', '~> 0.10.0'
+gem 'httparty'
+#gem 'opengraph'
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development

@@ -1,0 +1,23 @@
+<div id="sidebar" class="hidden-xs">
+        	<div style="height:10px;margin-top:15px"></div>
+	<form action="/search" id="search_form" class="form-inline">
+		<input onfocus="javascript: $('#limit_search').show('slow')" type="text" name="q" style="width:70%;" class="form-control" placeholder="search">
+		<button type="submit" class="btn btn-primary" onclick="setSearchFormAction()">
+	 		<i class="glyphicon glyphicon-search"></i>
+		</button>
+	</form>
+				<div class="sidebar_links_container" style="margin-top:15px">
+				<a href="/login" data-remote="true" data-toggle="modal" data-target="#myModal"><span class="glyphicon glyphicon-refresh"></span> New Post</a>
+				</div>
+				<div class="sidebar_links_container">
+				<a href="/login" data-remote="true" data-toggle="modal" data-target="#myModal"><span class="glyphicon glyphicon glyphicon-link"></span> New Link</a>
+				</div>
+	<div class="sidebar_links_container"><a href="/headcycles"><span class="glyphicon glyphicon-th-list"></span> Headcycles</a></div>
+	<div class="sidebar_links_container">
+		<a href="/login" data-remote="true" data-toggle="modal" data-target="#myModal">
+	 <span class="glyphicon glyphicon-repeat"></span> Create a Headcycle</a>
+	</div>
+	<div class="sidebar_links_container"><a href="/wordcloud"><span class="glyphicon glyphicon-cloud"></span> Wordcloud</a></div>
+<div class="sidebar_links_container" style="width:100%"><a href="javascript: void(0)" onclick="self.location = '/?siteguide=true&amp;cb=1490738365'" data-no-turbolink="true"><span class="glyphicon glyphicon-road" style="color: #ffb6c1"></span> Headcycle Tour</a></div>
+
+      </div>
